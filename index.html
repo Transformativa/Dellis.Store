@@ -158,7 +158,7 @@
         <details><summary>Can I return or exchange something?</summary>
           <p>Returns follow the policy of the store you bought from, linked at the bottom of each store page. If something isn't right, email us and we'll help sort it out.</p></details>
         <details><summary>How can we get in touch?</summary>
-          <p>Email us at <span class="email" id="faqEmail"></span>. We read every message.</p></details>
+          <p>Email us at <a class="email" id="faqEmail" href="mailto:Admin@dellis.store">Admin@dellis.store</a>. We read every message.</p></details>
       </div>
     </div>
   </section>
@@ -168,7 +168,7 @@
   <div class="wrap">
     <div>
       <img class="flogo logo" alt="Dellis" width="136" height="56">
-      <p style="margin-top:8px"><span class="email" id="footEmail"></span><br><span id="footLoc"></span></p>
+      <p style="margin-top:8px"><a class="email" id="footEmail" href="mailto:Admin@dellis.store">Admin@dellis.store</a><br><span id="footLoc"></span></p>
     </div>
     <nav class="socials" id="socials" aria-label="Dellis elsewhere"></nav>
     <p class="fine">© <span id="yr"></span> Dellis. Supporting neurodiversity through stories, music and merch. As an Amazon Associate, Dellis earns from qualifying purchases.</p>
@@ -248,7 +248,7 @@
       <div><h3>${esc(p.title)}</h3><p>${esc(p.blurb)}</p><span class="count">${p.items.length} picks →</span></div></a>`).join("");
   $("#aboutPhoto").src = D.aboutPhoto;
   document.querySelectorAll("img.logo").forEach(i => i.src = D.logo);
-  ["#faqEmail", "#footEmail"].forEach(s => $(s).textContent = L.email);
+  ["#faqEmail", "#footEmail"].forEach(s => { $(s).textContent = L.email; $(s).href = "mailto:" + L.email; });
   $("#footLoc").textContent = L.location;
   $("#yr").textContent = new Date().getFullYear();
   const I = D.icons;

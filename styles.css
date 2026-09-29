@@ -186,7 +186,8 @@ footer{padding-block:56px 40px;border-top:1px solid var(--line)}
 footer .wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:32px}
 @media (max-width:720px){footer .wrap{grid-template-columns:1fr}}
 footer p{color:var(--muted)}
-.email{font-weight:700;color:var(--ink);user-select:all}
+.email{font-weight:700;color:var(--sea);text-decoration:underline;text-underline-offset:3px}
+.email:hover{color:var(--ink)}
 .socials{display:flex;flex-wrap:wrap;gap:10px;align-content:start}
 .socials a{display:block;width:39px;height:39px;border-radius:50%;transition:transform .15s}
 .socials a:hover{transform:translateY(-2px)}
