@@ -51,6 +51,8 @@ p{margin:0}
 .gauge{position:fixed;left:18px;top:50%;transform:translateY(-50%);z-index:10;display:none;
   font-family:var(--f-mono);font-size:.72rem;color:var(--muted)}
 @media (min-width:1320px){.gauge{display:block}}
+.gauge-title{margin:0 0 14px;font:400 .78rem var(--f-display);letter-spacing:.14em;text-transform:uppercase;color:var(--ink);display:flex;align-items:center;gap:8px}
+.gauge-title::before{content:"";width:10px;height:10px;border-radius:50%;border:2px solid var(--sea)}
 .gauge ol{list-style:none;margin:0;padding:0 0 0 14px;border-left:2px solid var(--line);display:grid;gap:18px}
 .gauge li{position:relative}
 .gauge li::before{content:"";position:absolute;left:-20px;top:.45em;width:10px;height:2px;background:var(--line)}
