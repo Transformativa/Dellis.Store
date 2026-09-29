@@ -27,7 +27,7 @@ jobs:
         run: node scripts/sync-products.mjs
       - name: Publish changes
         run: |
-          if git diff --quiet -- products.js; then
+          if [ -z "$(git status --porcelain -- products.js)" ]; then
             echo "Shop is already up to date."
             exit 0
           fi
