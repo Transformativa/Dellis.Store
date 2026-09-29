@@ -25,25 +25,13 @@ Almost every update happens in `data.js`:
 
 Save the file on GitHub and the live site updates within a minute or two.
 
-## Putting it online (one time)
+## Where it lives
 
-1. Create a free account at github.com.
-2. Create a new **public** repository named `dellis-site`.
-3. Upload every file in this folder (Add file → Upload files), then Commit.
-4. Settings → Pages → Source: *Deploy from a branch*, Branch: `main`, folder `/ (root)` → Save.
-   The site appears at `https://<your-username>.github.io/dellis-site/` within a few minutes. Review it there while Wix stays live.
-
-## Switching dellis.store over (when you're ready)
-
-At the company that manages the dellis.store domain (Wix → Domains, if it was bought through Wix):
-
-1. For the root domain `dellis.store`, add four **A** records:
-   `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
-2. For `www`, add a **CNAME** record pointing to `<your-username>.github.io`
-3. **Do not touch the MX or TXT records.** Those run the Admin@dellis.store email.
-4. Back in GitHub → Settings → Pages, enter `www.dellis.store` as the custom domain, wait for the check to pass, then tick **Enforce HTTPS**. (GitHub adds a `CNAME` file for you. Don't add it earlier, or the preview address will redirect to the old Wix site.)
-
-Changes usually take effect within an hour and can take up to 48 hours.
+- Live site: https://www.dellis.store (GitHub Pages, custom domain set by the `CNAME` file)
+- Domain registration and DNS: Wix (Domains → dellis.store → Manage DNS Records)
+  - A records for `dellis.store`: 185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153
+  - CNAME `www` → transformativa.github.io
+- Email (Admin@dellis.store): Zoho Mail. Leave the MX, SPF, DKIM, DMARC and Zoho verification records alone.
 
 ## Curated List
 
