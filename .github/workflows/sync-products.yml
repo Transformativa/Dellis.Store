@@ -1,0 +1,38 @@
+name: Sync products from Printify and Printful
+
+on:
+  schedule:
+    - cron: "17 7 * * *"   # every night, about 3:17 AM Eastern
+  workflow_dispatch:        # "Run workflow" button for an immediate refresh
+  push:
+    branches: [main]
+    paths: ["scripts/**", ".github/workflows/sync-products.yml"]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: product-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Read both stores
+        run: node scripts/sync-products.mjs
+      - name: Publish changes
+        run: |
+          if git diff --quiet -- products.js; then
+            echo "Shop is already up to date."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898333+github-actions[bot]@users.noreply.github.com"
+          git add products.js
+          git commit -m "Sync products from Printify and Printful"
+          git push

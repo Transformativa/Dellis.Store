@@ -7,6 +7,8 @@ The brand site for Dellis and Danny the Mighty Diver, hosted free on GitHub Page
 | File | What it is |
 |---|---|
 | `index.html` | The page itself: layout, colors and fonts |
+| `products.js` | Shop items, written automatically by the nightly sync (don't edit by hand) |
+| `scripts/` | The product sync that reads both stores |
 | `data.js` | All the content: books, products, albums, videos, picks, links, logo and images |
 | `styles.css` | Colors, fonts and layout shared by every page |
 | `picks.html` | Danny's Curated List (books, sensory and STEM, personal care) |
@@ -18,7 +20,7 @@ The brand site for Dellis and Danny the Mighty Diver, hosted free on GitHub Page
 
 Almost every update happens in `data.js`:
 
-- **Add a product:** copy one product line, then change the name, price, group (`kids`, `adults` or `gear`), store (`printful` or `printify`), image link and product link.
+- **Products update themselves.** Every night a GitHub job reads the Printify and Printful stores and refreshes `products.js` (new items, prices, removed items). To refresh right away: GitHub → **Actions** → *Sync products from Printify and Printful* → **Run workflow**. Product names on the site are the names in the stores, so rename them there. Items whose name ends in "copy" are skipped. If a store can't be read, the job stops and the site keeps its last list; GitHub emails you when that happens.
 - **Add a book:** add a line to `series.books` (keeps series order) or to `moreBooks`.
 - **Add an album:** add its Spotify album ID (the part after `/album/`) to `albums`.
 - **Add a video:** add its YouTube ID (the part after `watch?v=`) to `videos`. The first video is the big featured one.

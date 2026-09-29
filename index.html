@@ -85,7 +85,7 @@
           <button type="button" data-f="all" aria-pressed="true">All</button>
           <button type="button" data-f="kids" aria-pressed="false">Kids</button>
           <button type="button" data-f="adults" aria-pressed="false">Adults</button>
-          <button type="button" data-f="gear" aria-pressed="false">Bags</button>
+          <button type="button" data-f="gear" aria-pressed="false">Accessories</button>
         </div>
       </div>
       <div class="grid" id="grid"></div>
@@ -176,9 +176,12 @@
 </footer>
 
 <script src="data.js"></script>
+<script src="products.js"></script>
 <script>
 (function(){
   const D = window.DELLIS, L = D.links;
+  // Shop items come from products.js, refreshed nightly from Printify and Printful.
+  if (Array.isArray(window.DELLIS_PRODUCTS) && window.DELLIS_PRODUCTS.length) D.products = window.DELLIS_PRODUCTS;
   const $ = s => document.querySelector(s);
   const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
   const ext = 'target="_blank" rel="noopener"';
