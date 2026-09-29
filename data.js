@@ -118,29 +118,61 @@ window.DELLIS = {
     { id: "mft-7xb8FX4", title: "Mimi", length: "1:41" }
   ],
 
-  // Danny's Curated List (Amazon picks)
+  // Danny's Curated List (Amazon picks). Each list gets its own section on picks.html.
   picks: [
-    { title: "Danny's Favorite Books", blurb: "Books about neurodiversity, books by Danny, and books he simply loves.",
-      image: "https://static.wixstatic.com/media/98636b_a91546b180d14a8fad428dd81bdc2a48~mv2.png/v1/fill/w_600,h_450,al_c,q_85/98636b_a91546b180d14a8fad428dd81bdc2a48~mv2.png",
-      link: "https://www.dellis.store/post/danny-s-curated-list-of-awesome-books" },
-    { title: "Something for Every Sense", blurb: "Sensory favorites, from a bean bag chair to fidgets that actually get used.",
-      image: "https://static.wixstatic.com/media/98636b_635507a287d74c42895eb043b27ebbc6~mv2.png/v1/fill/w_600,h_450,al_c,q_85/98636b_635507a287d74c42895eb043b27ebbc6~mv2.png",
-      link: "https://www.dellis.store/post/sensory-wonders-danny-s-inspired-list-for-every-sense" },
-    { title: "Personal Care Picks", blurb: "Vitamins, skincare and everyday care items chosen with kids in mind.",
-      image: "https://static.wixstatic.com/media/98636b_a8f8ad9107b14d3e80078d48a2d86a33~mv2.png/v1/fill/w_600,h_450,al_c,q_85/98636b_a8f8ad9107b14d3e80078d48a2d86a33~mv2.png",
-      link: "https://www.dellis.store/post/danny-s-favorite-personal-care-items" }
+    { id: "books", title: "Danny's Favorite Books", image: "images/picks-books.jpg",
+      blurb: "Books about neurodiversity, books by Danny, and books he simply loves.",
+      items: [
+        { name: "Forever My Puppy", note: "Written by Danny in honor of his dog Whooffie, who passed away in February 2025. For any family that has lost a pet.", link: "https://amzn.to/4i4RlIi" },
+        { name: "Danny the Mighty Diver", note: "Danny's first book, based on the bedtime stories his mom tells him: ocean adventures, friendship and imagination.", link: "https://amzn.to/3DkeYNY" },
+        { name: "Uniquely Wired", note: "Winner of the 2023 Autism Live Best Book Award. Zak, a boy with autism, explains how he experiences the sights and sounds around him.", link: "https://amzn.to/40hajFF" },
+        { name: "Sensory Ninja", note: "From the Ninja Life Hacks series for ages 3 to 11: a fun look at sensory superpowers for kids with sensory processing differences.", link: "https://amzn.to/48Ha74G" }
+      ] },
+    { id: "sensory", title: "Something for Every Sense", image: "images/picks-sensory.jpg",
+      blurb: "Sensory favorites and STEM toys, from a bean bag chair to robot kits.",
+      items: [
+        { name: "Plush-Storage Bean Bag", note: "A soft seat that doubles as storage for stuffed animals, pillows and blankets.", link: "https://amzn.to/4eRixbZ" },
+        { name: "Elephant Sensory Swivel Chair", note: "A spinning chair for ages 3 and up that builds balance and coordination.", link: "https://amzn.to/3YiraFH" },
+        { name: "Sensory Tree Swing", note: "A sturdy outdoor swing for ages 6 and up, holding up to 200 lbs.", link: "https://amzn.to/3BTIIAm" },
+        { name: "Air Cloud Rocker", note: "An inflatable rocking nest for calm corners, great for movement and self-regulation.", link: "https://amzn.to/3NDZtBW" },
+        { name: "JBL JR 300BT Kids Headphones", note: "Volume-limited wireless headphones. Danny uses these at home and a wired pair at school.", link: "https://amzn.to/3AiPPld" },
+        { name: "MagMen Magnetic Figures", note: "Stretchy magnetic characters that make a great travel fidget.", link: "https://amzn.to/4ffq0Bk" },
+        { name: "Otamatone Classic", note: "A silly music-note-shaped synthesizer you play by sliding and squeezing.", link: "https://amzn.to/3YARThK" },
+        { name: "Dissect-It Lab Dissection Toy", note: "A realistic synthetic dissection kit. Danny loved it so much he wants every STEM fan to try it.", link: "https://amzn.to/4dVtlER" },
+        { name: "Dissect-It Sea Creature Kit", note: "The sea-creature version, great for motor skills and ocean lovers.", link: "https://amzn.to/3BWq4I3" },
+        { name: "A Little SPOT of Feelings Plush Set", note: "Eight emotion plush friends that go with the A Little SPOT books.", link: "https://amzn.to/3ZiEtaB" },
+        { name: "Solar and Wind Science Kits", note: "Build a solar car, a wind car, a robot, a tank and a glider.", link: "https://amzn.to/3ZkekZ6" },
+        { name: "ThinkFun Gravity Maze", note: "An award-winning marble maze that builds planning and spatial reasoning.", link: "https://amzn.to/3YZJYcV" },
+        { name: "Talking World Map Poster", note: "How Danny learned every country, ocean and flag by heart.", link: "https://amzn.to/3Z5xnF0" },
+        { name: "100+ Science Experiments Kit", note: "A big box of hands-on experiments for budding scientists.", link: "https://amzn.to/4fEXpX0" },
+        { name: "Spirograph Deluxe Spin Art Kit", note: "Classic spiral designs plus spin art in one kit.", link: "https://amzn.to/3Z6u6pd" },
+        { name: "STEM Alphabots", note: "Letters that transform into robots and combine into giant ones.", link: "https://amzn.to/4fVXrJy" },
+        { name: "STEM Number Robots", note: "Numbers that transform into robots.", link: "https://amzn.to/3YZjMzj" },
+        { name: "Cozy Folding Kids Chair", note: "A cushioned chair with an adjustable back that folds flat for storage.", link: "https://amzn.to/4hVqOOh" }
+      ] },
+    { id: "care", title: "Personal Care Picks", image: "images/picks-care.jpg",
+      blurb: "Vitamins, skincare and everyday care items that keep Danny feeling his best.",
+      note: "These are our family's picks, not medical advice. Check with your pediatrician before starting any supplement.",
+      items: [
+        { name: "Renzo's Picky Eater Multivitamin with Iron", note: "Sugar-free melt-in-your-mouth tablets for picky eaters.", link: "https://amzn.to/3UmkUeR" },
+        { name: "Zarbee's Kids 1mg Melatonin Chewables", note: "Grape-flavored chewables for occasional sleeplessness.", link: "https://amzn.to/40b6lOU" },
+        { name: "Equazen PRO Fish Oil Jelly Chews", note: "Omega-3 and omega-6 chews for kids and teens.", link: "https://amzn.to/3A6tCXJ" },
+        { name: "Philips Sonicare for Kids", note: "A rechargeable toothbrush with an app that makes brushing fun.", link: "https://amzn.to/4ffuUye" },
+        { name: "Dr. Bronner's Baby Unscented Castile Soap", note: "A gentle, unscented soap for sensitive skin.", link: "https://amzn.to/3BOV10D" },
+        { name: "Aquaphor Healing Ointment", note: "Our go-to for dry skin, chapped lips and minor scrapes.", link: "https://amzn.to/4he3cE5" }
+      ] }
   ],
 
   // Logo and images from the original Dellis site
-  logo: "https://static.wixstatic.com/media/98636b_63be5c69c62d4fc187a5c16f472cf32b~mv2.jpg/v1/fill/w_436,h_180,al_c,q_90/98636b_63be5c69c62d4fc187a5c16f472cf32b~mv2.jpg",
-  aboutPhoto: "https://static.wixstatic.com/media/98636b_869625f72f164700bccba3a4376941b2~mv2.png/v1/fill/w_1040,h_1000,al_c,q_85/98636b_869625f72f164700bccba3a4376941b2~mv2.png",
+  logo: "images/logo.jpg",
+  aboutPhoto: "images/about-danny.jpg",
   icons: {
-    barnesNoble: "https://static.wixstatic.com/media/98636b_e2d9452b117b4d56b0f75014e4a06501~mv2.png/v1/fill/w_78,h_78,al_c,q_85/98636b_e2d9452b117b4d56b0f75014e4a06501~mv2.png",
-    spotify: "https://static.wixstatic.com/media/11062b_967bb70c2d6a4f19bd32b49d8bbeaf7f~mv2.png/v1/fill/w_78,h_78,al_c,q_85/11062b_967bb70c2d6a4f19bd32b49d8bbeaf7f~mv2.png",
-    appleMusic: "https://static.wixstatic.com/media/11062b_4cf85f8d931c417280d993ecf42cadaf~mv2.png/v1/fill/w_78,h_78,al_c,q_85/11062b_4cf85f8d931c417280d993ecf42cadaf~mv2.png",
-    youtube: "https://static.wixstatic.com/media/11062b_6fc54c8957474101ba6e80b01907ae50~mv2.png/v1/fill/w_78,h_78,al_c,q_85/11062b_6fc54c8957474101ba6e80b01907ae50~mv2.png",
-    amazon: "https://static.wixstatic.com/media/11062b_91eb20e06c7f46beacce9982d5b62643~mv2.png/v1/fill/w_78,h_78,al_c,q_85/11062b_91eb20e06c7f46beacce9982d5b62643~mv2.png",
-    facebook: "https://static.wixstatic.com/media/4057345bcf57474b96976284050c00df.png/v1/fill/w_78,h_78,al_c,q_85/4057345bcf57474b96976284050c00df.png",
-    linkedin: "https://static.wixstatic.com/media/aa0402eb9ba2430d9d0620b59556efca.png/v1/fill/w_78,h_78,al_c,q_85/aa0402eb9ba2430d9d0620b59556efca.png"
+    barnesNoble: "images/icons/barnes-noble.png",
+    spotify: "images/icons/spotify.png",
+    appleMusic: "images/icons/apple-music.png",
+    youtube: "images/icons/youtube.png",
+    amazon: "images/icons/amazon.png",
+    facebook: "images/icons/facebook.png",
+    linkedin: "images/icons/linkedin.png"
   }
 };

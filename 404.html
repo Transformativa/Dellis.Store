@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dellis</title>
+<meta name="robots" content="noindex">
+<script>
+  // Old Wix addresses → the matching spot on the new site.
+  (function () {
+    var base = location.hostname.endsWith("github.io") ? "/" + location.pathname.split("/")[1] + "/" : "/";
+    var p = location.pathname.toLowerCase();
+    var map = [
+      [/\/about/, "#about"],
+      [/\/faqs?/, "#faq"],
+      [/\/category\/books/, "#books"],
+      [/\/(category|product-page|shop|cart)/, "#shop"],
+      [/\/post\/danny-s-curated-list-of-awesome-books/, "picks.html#books"],
+      [/\/(post\/sensory|list\/categories\/sensory)/, "picks.html#sensory"],
+      [/\/(post\/danny-s-favorite-personal-care|list\/categories\/supplements)/, "picks.html#care"],
+      [/\/list\/categories\/books/, "picks.html#books"],
+      [/\/(list|post|blog)/, "picks.html"]
+    ];
+    var dest = "";
+    for (var i = 0; i < map.length; i++) { if (map[i][0].test(p)) { dest = map[i][1]; break; } }
+    location.replace(base + dest);
+  })();
+</script>
+</head>
+<body style="font-family:Helvetica,Arial,sans-serif;background:#F7FEF9;color:#232323;padding:40px">
+  <p>This page has moved. <a href="/" style="color:#E44E0F">Go to the Dellis home page</a>.</p>
+</body>
+</html>

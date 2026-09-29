@@ -8,207 +8,14 @@
 <meta name="google-site-verification" content="gPerBpujBVV_LdWMfSJTfi2_KWp5iZvFoNevTPkrnFA">
 <meta property="og:title" content="Dellis · Danny the Mighty Diver">
 <meta property="og:description" content="Books, music and merch from Danny the Mighty Diver, celebrating neurodiversity.">
-<meta property="og:image" content="https://static.wixstatic.com/media/98636b_12812fb54e6343ef92e29a20406724e1~mv2.png">
+<meta property="og:image" content="https://www.dellis.store/images/share.png">
+<link rel="icon" href="images/logo.jpg">
 <meta property="og:url" content="https://www.dellis.store">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Questrial&display=swap">
-<style>
-/* Layout: one long dive. Each section is a depth stop, marked on a gauge that follows you down.
-   Colors, type and logo match the original Dellis Wix site. */
-:root{
-  --water-top:#F7FEF9; --water-deep:#F7FEF9;       /* Dellis off-white */
-  --green:#4CFC0F; --coral:#FF8969;                 /* hero gradient green, logo coral */
-  --card:#FFFFFF; --ink:#232323; --muted:#4A4A4A; --line:#E1EAE3;
-  --sea:#E44E0F;                                    /* Dellis orange */
-  --mask:#000000; --mask-ink:#F7FEF9;               /* black pill buttons */
-  --glow:rgba(76,252,15,.16);
-  --grad:linear-gradient(90deg,#4CFC0F 0%,#F7FEF9 100%);
-  --f-display:"Questrial", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --f-body:"Helvetica Neue", Helvetica, Arial, sans-serif;
-  --f-mono:"Questrial", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --r:14px; --max:1120px;
-  color-scheme:light;
-}
-
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:84px}
-@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
-body{
-  margin:0;font:400 17px/1.6 var(--f-body);color:var(--ink);
-  background:var(--water-top);
-  min-height:100vh;
-}
-img{max-width:100%;display:block}
-a{color:var(--sea)}
-a:focus-visible,button:focus-visible{outline:3px solid var(--sea);outline-offset:3px;border-radius:6px}
-h1,h2,h3{font-family:var(--f-display);line-height:1.08;margin:0;text-wrap:balance;font-weight:400}
-h2{font-size:clamp(2.1rem,4.5vw,3.2rem)}
-h3{font-size:1.25rem;line-height:1.2}
-p{margin:0}
-
-.wrap{max-width:var(--max);margin:0 auto;padding-inline:clamp(16px,4vw,32px)}
-
-/* header */
-.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;
-  background:var(--water-top);border-bottom:1px solid var(--line)}
-.top .wrap{display:flex;align-items:center;gap:16px;min-height:72px}
-.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
-.brand svg{width:38px;height:38px;flex:none}
-.brand img{height:40px;width:auto}
-.nav{display:flex;gap:4px;margin-left:auto;flex-wrap:wrap;justify-content:flex-end}
-.nav a{color:var(--ink);text-decoration:none;font:400 1.02rem var(--f-display);padding:6px 12px;border-radius:999px}
-.nav a:hover{background:var(--glow)}
-@media (max-width:720px){.nav a:not(.nav-shop){display:none}}
-.nav-shop{background:var(--mask);color:var(--mask-ink)!important;padding:7px 18px!important}
-.nav-shop:hover{background:var(--mask)!important;opacity:.85}
-
-/* depth gauge */
-.gauge{position:fixed;left:18px;top:50%;transform:translateY(-50%);z-index:10;display:none;
-  font-family:var(--f-mono);font-size:.72rem;color:var(--muted)}
-@media (min-width:1320px){.gauge{display:block}}
-.gauge ol{list-style:none;margin:0;padding:0 0 0 14px;border-left:2px solid var(--line);display:grid;gap:18px}
-.gauge li{position:relative}
-.gauge li::before{content:"";position:absolute;left:-20px;top:.45em;width:10px;height:2px;background:var(--line)}
-.gauge a{color:inherit;text-decoration:none;display:block;white-space:nowrap}
-.gauge .d{display:block;color:var(--ink);opacity:.55}
-.gauge li.on a{color:var(--sea)}
-.gauge li.on .d{opacity:1;color:var(--sea);font-weight:500}
-.gauge li.on::before{background:var(--sea);width:16px;left:-23px;height:3px}
-
-/* shared section bits */
-section{padding-block:clamp(56px,9vw,104px)}
-.eyebrow{font-family:var(--f-mono);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--sea);
-  display:flex;gap:10px;align-items:center;margin-bottom:14px}
-.eyebrow::before{content:"";width:22px;height:2px;background:currentColor}
-.lede{color:var(--muted);max-width:60ch;margin-top:14px;font-size:1.08rem}
-.head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:32px}
-.btn{display:inline-flex;align-items:center;gap:8px;font:700 .98rem var(--f-body);text-decoration:none;
-  padding:12px 20px;border-radius:999px;border:2px solid transparent;cursor:pointer;transition:transform .15s}
-.btn:hover{transform:translateY(-2px)}
-.btn-main{background:var(--mask);color:var(--mask-ink)}
-.btn-line{border-color:var(--ink);color:var(--ink)}
-.btn-small{padding:8px 14px;font-size:.88rem}
-.arrow::after{content:"↗";font-size:.9em}
-
-/* hero */
-.hero{padding-block:clamp(40px,7vw,88px) clamp(48px,8vw,96px);background:var(--grad)}
-.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,5vw,64px);align-items:center}
-@media (max-width:860px){.hero .wrap{grid-template-columns:1fr}}
-.hero h1{font-size:clamp(3rem,7.5vw,5.4rem);letter-spacing:-.02em;color:var(--ink)}
-.hero h1 em{font-style:normal;color:var(--sea);display:block}
-.hero p.lede{font-size:1.15rem;color:var(--ink)}
-.hero .eyebrow{color:var(--sea)}
-.hero .tags span{border-color:rgba(35,35,35,.25);color:var(--ink)}
-.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
-.tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:26px;font-family:var(--f-mono);font-size:.78rem;color:var(--muted)}
-.tags span{border:1px solid var(--line);border-radius:999px;padding:4px 10px}
-.stack{position:relative;aspect-ratio:1/1;max-width:520px;width:100%;justify-self:center}
-.stack img{position:absolute;width:52%;border-radius:10px;box-shadow:0 18px 40px rgba(4,30,45,.28);background:var(--card)}
-.stack img:nth-child(1){left:2%;top:14%;transform:rotate(-8deg)}
-.stack img:nth-child(2){left:24%;top:2%;z-index:2;transform:rotate(1deg)}
-.stack img:nth-child(3){right:2%;top:18%;transform:rotate(9deg)}
-.bubble{position:absolute;border-radius:50%;border:2px solid var(--sea);opacity:.35;animation:rise 7s ease-in infinite}
-@keyframes rise{from{transform:translateY(0)}to{transform:translateY(-60px);opacity:0}}
-
-/* books */
-.shelf{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:26px 20px}
-.book{text-decoration:none;color:var(--ink);display:grid;gap:10px;align-content:start}
-.book .cover{position:relative;aspect-ratio:2/3;border-radius:6px 10px 10px 6px;overflow:hidden;background:var(--line);
-  box-shadow:0 10px 22px rgba(4,30,45,.18);transition:transform .2s}
-.book:hover .cover{transform:translateY(-4px) rotate(-1deg)}
-.book .cover img{width:100%;height:100%;object-fit:cover}
-.book .no{font-family:var(--f-mono);font-size:.74rem;color:var(--muted)}
-.book h3{font-size:1.02rem;font-family:var(--f-body);font-weight:700;line-height:1.3}
-.new{position:absolute;top:8px;left:8px;background:var(--green);color:#000;font:700 .7rem var(--f-body);
-  padding:3px 8px;border-radius:999px;letter-spacing:.06em}
-.solo{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;margin-top:48px}
-.solo a{display:grid;grid-template-columns:110px 1fr;gap:18px;align-items:center;text-decoration:none;color:var(--ink);
-  background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px}
-.solo img{border-radius:4px 8px 8px 4px;box-shadow:0 8px 18px rgba(4,30,45,.16)}
-.solo small{font-family:var(--f-mono);font-size:.74rem;color:var(--sea);display:block;margin-bottom:4px}
-.solo p{color:var(--muted);font-size:.95rem;margin-top:6px}
-.solo .go{margin-top:10px;font-weight:700;color:var(--sea);font-size:.92rem}
-.solo .go::after{content:" ↗"}
-.also{margin-top:28px;color:var(--muted);font-size:.95rem}
-
-/* shop */
-.filters{display:flex;gap:8px;flex-wrap:wrap}
-.filters button{font:700 .9rem var(--f-body);border:2px solid var(--line);background:transparent;color:var(--ink);
-  padding:7px 14px;border-radius:999px;cursor:pointer}
-.filters button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--water-top)}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:20px}
-.item{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;
-  text-decoration:none;color:var(--ink);transition:transform .2s, box-shadow .2s}
-.item:hover{transform:translateY(-3px);box-shadow:0 14px 28px rgba(4,30,45,.12)}
-.item .ph{aspect-ratio:1/1;background:#F6F8F8;display:grid;place-items:center}
-.item .ph img{width:100%;height:100%;object-fit:contain}
-.item .meta{padding:14px 16px 16px;display:grid;gap:4px;flex:1;align-content:start}
-.item h3{font:700 1rem/1.3 var(--f-body)}
-.item .price{font-family:var(--f-mono);font-size:.88rem;font-variant-numeric:tabular-nums}
-.item .where{margin-top:8px;font-size:.84rem;font-weight:700;color:var(--sea)}
-.item .where::after{content:" ↗"}
-.shopnote{margin-top:24px;color:var(--muted);font-size:.93rem;max-width:70ch}
-
-/* listen & watch */
-.listen{display:grid;grid-template-columns:1fr 1.3fr;gap:32px;align-items:start}
-@media (max-width:860px){.listen{grid-template-columns:1fr}}
-.albums{display:grid;gap:12px}
-.albums iframe{display:block;width:100%;height:152px;border:0;border-radius:12px}
-.stream{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
-.feature{position:relative;aspect-ratio:16/9;border-radius:var(--r);overflow:hidden;background:#000;cursor:pointer;border:0;padding:0;width:100%}
-.vid{position:relative;aspect-ratio:16/9;border-radius:10px;overflow:hidden;background:#000;cursor:pointer;border:0;padding:0;width:100%;display:block}
-.vid img,.feature img{width:100%;height:100%;object-fit:cover;opacity:.9;transition:opacity .2s}
-.vid:hover img,.feature:hover img{opacity:1}
-.vid iframe,.feature iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-.play{position:absolute;inset:0;display:grid;place-items:center}
-.play::before{content:"";width:62px;height:62px;border-radius:50%;background:var(--mask);
-  box-shadow:0 6px 18px rgba(0,0,0,.3)}
-.play::after{content:"";position:absolute;border-left:18px solid var(--mask-ink);border-top:11px solid transparent;border-bottom:11px solid transparent;margin-left:5px}
-.len{position:absolute;right:8px;bottom:8px;background:rgba(0,0,0,.75);color:#fff;font:500 .75rem var(--f-mono);padding:2px 6px;border-radius:4px}
-.vids{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:20px;margin-top:22px}
-.vcap{margin-top:8px;font-weight:700;font-size:.95rem}
-.ftitle{margin-top:12px;font-family:var(--f-display);font-size:1.5rem;font-weight:600}
-
-/* picks */
-.picks{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
-.pick{text-decoration:none;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column}
-.pick img{aspect-ratio:4/3;object-fit:cover;width:100%}
-.pick div{padding:16px;display:grid;gap:6px}
-.pick p{color:var(--muted);font-size:.95rem}
-
-/* about */
-.about{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,64px);align-items:center}
-#about{background:var(--grad)}
-@media (max-width:860px){.about{grid-template-columns:1fr}}
-.about img{width:100%;max-width:520px;justify-self:center;order:2}
-.about .body{display:grid;gap:16px;max-width:62ch;min-width:0}
-.about .body p{color:var(--ink)}
-.about blockquote{margin:6px 0 0;font-family:var(--f-display);font-weight:600;font-size:1.6rem;line-height:1.2;color:var(--ink)}
-
-/* faq */
-.faq{max-width:780px}
-.faq details{border-bottom:1px solid var(--line);padding:4px 0}
-.faq summary{cursor:pointer;list-style:none;font-weight:700;font-size:1.08rem;padding:16px 36px 16px 0;position:relative}
-.faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:"+";position:absolute;right:4px;top:10px;font:600 1.6rem var(--f-display);color:var(--sea)}
-.faq details[open] summary::after{content:"–"}
-.faq details p{color:var(--muted);padding:0 0 18px;max-width:65ch}
-
-/* footer */
-footer{padding-block:56px 40px;border-top:1px solid var(--line)}
-footer .wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:32px}
-@media (max-width:720px){footer .wrap{grid-template-columns:1fr}}
-footer p{color:var(--muted)}
-.email{font-weight:700;color:var(--ink);user-select:all}
-.socials{display:flex;flex-wrap:wrap;gap:10px;align-content:start}
-.socials a{display:block;width:39px;height:39px;border-radius:50%;transition:transform .15s}
-.socials a:hover{transform:translateY(-2px)}
-.socials img{width:39px;height:39px}
-.flogo{height:56px;width:auto}
-.fine{grid-column:1/-1;font-family:var(--f-mono);font-size:.75rem;color:var(--muted)}
-</style>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -363,7 +170,7 @@ footer p{color:var(--muted)}
       <p style="margin-top:8px"><span class="email" id="footEmail"></span><br><span id="footLoc"></span></p>
     </div>
     <nav class="socials" id="socials" aria-label="Dellis elsewhere"></nav>
-    <p class="fine">© <span id="yr"></span> Dellis. Supporting neurodiversity through stories, music and merch.</p>
+    <p class="fine">© <span id="yr"></span> Dellis. Supporting neurodiversity through stories, music and merch. As an Amazon Associate, Dellis earns from qualifying purchases.</p>
   </div>
 </footer>
 
@@ -433,8 +240,8 @@ footer p{color:var(--muted)}
 
   // picks + about + footer
   $("#pickGrid").innerHTML = D.picks.map(p => `
-    <a class="pick" href="${p.link}" ${ext}><img src="${p.image}" alt="" loading="lazy">
-      <div><h3>${esc(p.title)}</h3><p>${esc(p.blurb)}</p></div></a>`).join("");
+    <a class="pick" href="picks.html#${p.id}"><img src="${p.image}" alt="" loading="lazy">
+      <div><h3>${esc(p.title)}</h3><p>${esc(p.blurb)}</p><span class="count">${p.items.length} picks →</span></div></a>`).join("");
   $("#aboutPhoto").src = D.aboutPhoto;
   document.querySelectorAll("img.logo").forEach(i => i.src = D.logo);
   ["#faqEmail", "#footEmail"].forEach(s => $(s).textContent = L.email);

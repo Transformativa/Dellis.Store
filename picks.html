@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Danny's Picks · Dellis</title>
+<meta name="description" content="Danny's favorite books, sensory toys, STEM kits and personal care items, all on Amazon.">
+<meta name="google-site-verification" content="gPerBpujBVV_LdWMfSJTfi2_KWp5iZvFoNevTPkrnFA">
+<meta property="og:title" content="Dellis · Danny the Mighty Diver">
+<meta property="og:description" content="Books, music and merch from Danny the Mighty Diver, celebrating neurodiversity.">
+<meta property="og:image" content="https://www.dellis.store/images/share.png">
+<link rel="icon" href="images/logo.jpg">
+<meta property="og:url" content="https://www.dellis.store">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Questrial&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="./" aria-label="Dellis home">
+      <svg viewBox="39 39.003 122 121.995" aria-hidden="true"><path d="M161 99.994c0 33.699-27.312 61.004-61.004 61.004C66.307 160.998 39 133.692 39 99.994c0-33.686 27.307-60.991 60.996-60.991C133.688 39.002 161 66.307 161 99.994z" fill="#FF8969"/><path d="M115.159 93.002c2.841 0 4.521 1.67 4.521 1.67 1.183 1.183 2.79 2.37 3.575 2.618.78.248 2.848-1.953 2.848-3.631V83.211c0-1.67-1.37-3.043-3.055-3.043h-13.97c-1.675 0-3.286-.63-3.581-1.413-.298-.793 1.393-3.823 2.576-5.006 0 0 1.675-1.678 1.675-4.523 0-4.276-3.46-7.742-7.734-7.742a7.738 7.738 0 0 0-7.741 7.742c0 2.845 1.675 4.523 1.675 4.523 1.193 1.183 2.365 2.788 2.623 3.571.245.78-1.948 2.848-3.621 2.848H80.98c-1.678 0-3.053 1.373-3.053 3.043v10.96c0 1.685-.507 3.133-1.125 3.233-.628.087-3.233-1.548-4.416-2.73 0 0-1.675-1.67-4.524-1.67-4.273 0-7.739 3.468-7.739 7.731a7.741 7.741 0 0 0 7.739 7.736c2.848 0 4.524-1.675 4.524-1.675 1.183-1.193 2.668-2.363 3.281-2.606.623-.237 2.26 1.433 2.26 3.106v17.998a3.06 3.06 0 0 0 3.053 3.046h13.97c1.673 0 3.286-.645 3.581-1.423.285-.782-1.39-3.816-2.583-4.998 0 0-1.675-1.673-1.675-4.523a7.733 7.733 0 0 1 7.741-7.734 7.731 7.731 0 0 1 7.734 7.734c0 2.851-1.675 4.523-1.675 4.523-1.183 1.183-2.366 2.796-2.613 3.588-.26.773 1.943 2.833 3.618 2.833h13.97a3.056 3.056 0 0 0 3.055-3.046v-17.488c0-1.685-.642-3.288-1.428-3.588-.778-.293-3.813 1.385-4.996 2.578 0 0-1.68 1.675-4.521 1.675a7.738 7.738 0 0 1-7.739-7.736 7.74 7.74 0 0 1 7.74-7.733z" fill="#FFFFFF"/></svg>
+      <img class="logo" alt="Dellis" width="97" height="40">
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="./#books">Books</a>
+      <a href="./#listen">Music</a>
+      <a href="./#picks">Danny's Picks</a>
+      <a href="./#about">About</a>
+      <a class="nav-shop" href="./#shop">Shop</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="plist-hero">
+    <div class="wrap">
+      <div class="eyebrow">Curated list</div>
+      <h1>Danny's picks</h1>
+      <p class="lede" style="color:var(--ink)">Things our family actually uses and loves. Every link goes to Amazon.</p>
+      <nav class="jump" id="jump" aria-label="Lists"></nav>
+    </div>
+  </section>
+  <div id="lists"></div>
+  <div class="wrap"><p class="affil">As an Amazon Associate, Dellis earns from qualifying purchases.</p></div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <img class="flogo logo" alt="Dellis" width="136" height="56">
+      <p style="margin-top:8px"><span class="email" id="footEmail"></span><br><span id="footLoc"></span></p>
+    </div>
+    <nav class="socials" id="socials" aria-label="Dellis elsewhere"></nav>
+    <p class="fine">© <span id="yr"></span> Dellis. Supporting neurodiversity through stories, music and merch.</p>
+  </div>
+</footer>
+
+<script src="data.js"></script>
+<script>
+(function(){
+  const D = window.DELLIS, L = D.links;
+  const $ = s => document.querySelector(s);
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+  const ext = 'target="_blank" rel="noopener"';
+  $("#jump").innerHTML = D.picks.map(p => `<a class="btn btn-line btn-small" href="#${p.id}">${esc(p.title)}</a>`).join("");
+  $("#lists").innerHTML = D.picks.map(p => `
+    <section class="plist" id="${p.id}">
+      <div class="wrap">
+        <div class="plist-head">
+          <img src="${p.image}" alt="">
+          <div><h2>${esc(p.title)}</h2><p class="lede">${esc(p.blurb)}</p>${p.note ? `<p class="disclaim">${esc(p.note)}</p>` : ""}</div>
+        </div>
+        <div class="items">${p.items.map(i => `
+          <div class="pitem"><h3>${esc(i.name)}</h3><p>${esc(i.note)}</p>
+            <a class="btn btn-main btn-small arrow" href="${i.link}" ${ext}>Buy on Amazon</a></div>`).join("")}
+        </div>
+      </div>
+    </section>`).join("");
+  document.querySelectorAll("img.logo").forEach(i => i.src = D.logo);
+  ["#footEmail"].forEach(s => $(s) && ($(s).textContent = L.email));
+  $("#footLoc").textContent = L.location;
+  $("#yr").textContent = new Date().getFullYear();
+  const I = D.icons;
+  $("#socials").innerHTML = [["Barnes & Noble", L.barnesNoble, I.barnesNoble], ["Spotify", L.spotify, I.spotify],
+    ["Apple Music", L.appleMusic, I.appleMusic], ["YouTube", L.youtube, I.youtube], ["Amazon", D.series.link, I.amazon],
+    ["Facebook", L.facebook, I.facebook], ["LinkedIn", L.linkedin, I.linkedin]]
+    .map(([n, u, ic]) => `<a href="${u}" ${ext} aria-label="${esc(n)}" title="${esc(n)}"><img src="${ic}" alt=""></a>`).join("");
+  if (location.hash) { const t = document.getElementById(location.hash.slice(1)); if (t) t.scrollIntoView(); }
+})();
+</script>
+</body>
+</html>

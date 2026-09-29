@@ -8,6 +8,10 @@ The brand site for Dellis and Danny the Mighty Diver, hosted free on GitHub Page
 |---|---|
 | `index.html` | The page itself: layout, colors and fonts |
 | `data.js` | All the content: books, products, albums, videos, picks, links, logo and images |
+| `styles.css` | Colors, fonts and layout shared by every page |
+| `picks.html` | Danny's Curated List (books, sensory and STEM, personal care) |
+| `404.html` | Sends old Wix addresses (like /about or /faqs) to the right spot |
+| `images/` | Logo, About illustration, list images and footer icons (copied from Wix) |
 | `.nojekyll` | Tells GitHub to publish the files as they are |
 
 ## Changing content
@@ -41,11 +45,6 @@ At the company that manages the dellis.store domain (Wix → Domains, if it was 
 
 Changes usually take effect within an hour and can take up to 48 hours.
 
-## Before the Wix plan ends
+## Curated List
 
-The logo, the About illustration, the Curated List images and the footer icons are still loaded from Wix's image servers, and the three Curated List cards link to posts on the Wix site. Before cancelling Wix:
-
-- Download those images (Wix → Media) into an `images/` folder here and point `data.js` at them (for example `logo: "images/logo.jpg"`).
-- Rebuild the three Curated List posts as pages here, or point the cards at an Amazon list.
-
-Book covers, product photos and video thumbnails come from Amazon, Printful, Printify and YouTube and keep working after Wix is gone.
+Edit the `picks` section of `data.js`. Each list has a title, a picture and its items; each item has a name, a short note and an Amazon link.
