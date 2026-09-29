@@ -87,7 +87,7 @@
   $("#footLoc").textContent = L.location;
   $("#yr").textContent = new Date().getFullYear();
   const I = D.icons;
-  $("#socials").innerHTML = [["Barnes & Noble", L.barnesNoble, I.barnesNoble], ["Spotify", L.spotify, I.spotify],
+  $("#socials").innerHTML = [["Spotify", L.spotify, I.spotify],
     ["Apple Music", L.appleMusic, I.appleMusic], ["YouTube", L.youtube, I.youtube], ["Amazon", D.series.link, I.amazon],
     ["Facebook", L.facebook, I.facebook], ["LinkedIn", L.linkedin, I.linkedin]]
     .map(([n, u, ic]) => `<a href="${u}" ${ext} aria-label="${esc(n)}" title="${esc(n)}"><img src="${ic}" alt=""></a>`).join("");
