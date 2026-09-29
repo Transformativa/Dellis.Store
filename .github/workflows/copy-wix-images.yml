@@ -1,0 +1,39 @@
+name: Copy images from Wix
+on:
+  push:
+    paths: [".github/workflows/copy-wix-images.yml"]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  copy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download images
+        run: |
+          set -e
+          mkdir -p images/icons
+          W=https://static.wixstatic.com/media
+          get() { curl -fsSL --retry 3 -o "$1" "$2"; echo "saved $1 ($(stat -c%s "$1") bytes)"; }
+          get images/logo.jpg        "$W/98636b_63be5c69c62d4fc187a5c16f472cf32b~mv2.jpg/v1/fill/w_436,h_180,al_c,q_90/98636b_63be5c69c62d4fc187a5c16f472cf32b~mv2.jpg"
+          get images/about-danny.png "$W/98636b_869625f72f164700bccba3a4376941b2~mv2.png/v1/fill/w_780,h_750,al_c,q_85/98636b_869625f72f164700bccba3a4376941b2~mv2.png"
+          get images/share.png       "$W/98636b_12812fb54e6343ef92e29a20406724e1~mv2.png/v1/fit/w_1200,h_640,al_c/98636b_12812fb54e6343ef92e29a20406724e1~mv2.png"
+          get images/picks-books.png   "$W/98636b_a91546b180d14a8fad428dd81bdc2a48~mv2.png/v1/fill/w_600,h_450,al_c,q_85/98636b_a91546b180d14a8fad428dd81bdc2a48~mv2.png"
+          get images/picks-sensory.png "$W/98636b_635507a287d74c42895eb043b27ebbc6~mv2.png/v1/fill/w_600,h_450,al_c,q_85/98636b_635507a287d74c42895eb043b27ebbc6~mv2.png"
+          get images/picks-care.png    "$W/98636b_a8f8ad9107b14d3e80078d48a2d86a33~mv2.png/v1/fill/w_600,h_450,al_c,q_85/98636b_a8f8ad9107b14d3e80078d48a2d86a33~mv2.png"
+          get images/icons/barnes-noble.png "$W/98636b_e2d9452b117b4d56b0f75014e4a06501~mv2.png/v1/fill/w_78,h_78,al_c,q_85/98636b_e2d9452b117b4d56b0f75014e4a06501~mv2.png"
+          get images/icons/spotify.png      "$W/11062b_967bb70c2d6a4f19bd32b49d8bbeaf7f~mv2.png/v1/fill/w_78,h_78,al_c,q_85/11062b_967bb70c2d6a4f19bd32b49d8bbeaf7f~mv2.png"
+          get images/icons/apple-music.png  "$W/11062b_4cf85f8d931c417280d993ecf42cadaf~mv2.png/v1/fill/w_78,h_78,al_c,q_85/11062b_4cf85f8d931c417280d993ecf42cadaf~mv2.png"
+          get images/icons/youtube.png      "$W/11062b_6fc54c8957474101ba6e80b01907ae50~mv2.png/v1/fill/w_78,h_78,al_c,q_85/11062b_6fc54c8957474101ba6e80b01907ae50~mv2.png"
+          get images/icons/amazon.png       "$W/11062b_91eb20e06c7f46beacce9982d5b62643~mv2.png/v1/fill/w_78,h_78,al_c,q_85/11062b_91eb20e06c7f46beacce9982d5b62643~mv2.png"
+          get images/icons/facebook.png     "$W/4057345bcf57474b96976284050c00df.png/v1/fill/w_78,h_78,al_c,q_85/4057345bcf57474b96976284050c00df.png"
+          get images/icons/linkedin.png     "$W/aa0402eb9ba2430d9d0620b59556efca.png/v1/fill/w_78,h_78,al_c,q_85/aa0402eb9ba2430d9d0620b59556efca.png"
+          file images/*.* images/icons/*
+      - name: Commit images
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898333+github-actions[bot]@users.noreply.github.com"
+          git add images
+          git commit -m "Copy site images from Wix" || echo "nothing to commit"
+          git push
