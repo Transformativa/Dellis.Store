@@ -168,7 +168,7 @@
   <div class="wrap">
     <div>
       <img class="flogo logo" alt="Dellis" width="136" height="56">
-      <p style="margin-top:8px"><a class="email" id="footEmail" href="mailto:Admin@dellis.store">Admin@dellis.store</a><br><span id="footLoc"></span></p>
+      <p style="margin-top:8px"><span id="footLoc"></span></p>
     </div>
     <nav class="socials" id="socials" aria-label="Dellis elsewhere"></nav>
     <p class="fine">© <span id="yr"></span> Dellis. Supporting neurodiversity through stories, music and merch. As an Amazon Associate, Dellis earns from qualifying purchases.</p>
@@ -248,7 +248,7 @@
       <div><h3>${esc(p.title)}</h3><p>${esc(p.blurb)}</p><span class="count">${p.items.length} picks →</span></div></a>`).join("");
   $("#aboutPhoto").src = D.aboutPhoto;
   document.querySelectorAll("img.logo").forEach(i => i.src = D.logo);
-  ["#faqEmail", "#footEmail"].forEach(s => { $(s).textContent = L.email; $(s).href = "mailto:" + L.email; });
+  ["#faqEmail"].forEach(s => { $(s).textContent = L.email; $(s).href = "mailto:" + L.email; });
   $("#footLoc").textContent = L.location;
   $("#yr").textContent = new Date().getFullYear();
   const I = D.icons;
