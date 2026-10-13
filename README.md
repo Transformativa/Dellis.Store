@@ -38,3 +38,10 @@ Save the file on GitHub and the live site updates within a minute or two.
 ## Curated List
 
 Edit the `picks` section of `data.js`. Each list has a title, a picture and its items; each item has a name, a short note and an Amazon link.
+
+## Analytics
+
+`analytics.js` logs anonymous visits and clicks to the `dellis_events` table in the Supabase project `transformativa`. It records page views, menu/section clicks and outbound link clicks (Amazon, Spotify, Apple Music, YouTube, Printful, Printify, Barnes & Noble, social, email). No cookies or personal data: each browser gets a random ID in localStorage. The key in the file is public and insert-only.
+
+- Exclude your own visits: open the site once with `?notrack=1` (undo with `?notrack=0`).
+- Results: Supabase → SQL editor, e.g. `select * from dellis_daily_uniques;`, `select * from dellis_top_clicks;`, `select * from dellis_clicks_by_service;`
