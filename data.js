@@ -112,9 +112,7 @@ window.DELLIS = {
   videos: [
     { id: "ggOVSSWk4BY", title: "Live Like You Are Dreaming", length: "2:22" },
     { id: "IaqnzWeeU0Y", title: "Forever My Puppy", length: "2:13" },
-    { id: "3-8WfQ4tvsI", title: "Strong Together", length: "4:09" },
     { id: "_CALnIQSduk", title: "Journey Through Winter Holidays", length: "4:11" },
-    { id: "4Vde6C8ffg8", title: "Didi, You Are Special", length: "2:00" },
     { id: "mft-7xb8FX4", title: "Mimi", length: "1:41" }
   ],
 
