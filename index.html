@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Questrial&display=swap">
-<link rel="stylesheet" href="styles.css?v=20261103c">
+<link rel="stylesheet" href="styles.css?v=20261103d">
 </head>
 <body>
 
@@ -189,7 +189,7 @@
   </div>
 </footer>
 
-<script src="data.js?v=20261103c"></script>
+<script src="data.js?v=20261103d"></script>
 <script src="products.js"></script>
 <script>
 (function(){
@@ -278,7 +278,9 @@
 
   // depth gauge
   // apps: the section and menu entry appear once an app has a store link
-  const liveApps = (D.apps || []).filter(a => a.appStore || a.googlePlay);
+  // add ?preview=apps to the address to see the section before the apps are live
+  const previewApps = new URLSearchParams(location.search).get("preview") === "apps";
+  const liveApps = (D.apps || []).filter(a => previewApps || a.appStore || a.googlePlay);
   if (liveApps.length) {
     $("#appGrid").innerHTML = liveApps.map(a => `
       <div class="app">
@@ -289,6 +291,7 @@
           <div class="stream">
             ${a.appStore ? `<a class="btn btn-main btn-small arrow" href="${a.appStore}" ${ext}>App Store</a>` : ""}
             ${a.googlePlay ? `<a class="btn btn-main btn-small arrow" href="${a.googlePlay}" ${ext}>Google Play</a>` : ""}
+            ${!a.appStore && !a.googlePlay ? `<span class="btn btn-line btn-small" aria-disabled="true">Coming soon to the App Store and Google Play</span>` : ""}
           </div>
           ${a.privacy ? `<a class="app-privacy" href="${a.privacy}">Privacy policy</a>` : ""}
         </div>
