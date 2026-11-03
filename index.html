@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Questrial&display=swap">
-<link rel="stylesheet" href="styles.css?v=20261103d">
+<link rel="stylesheet" href="styles.css?v=20261103e">
 </head>
 <body>
 
@@ -189,7 +189,7 @@
   </div>
 </footer>
 
-<script src="data.js?v=20261103d"></script>
+<script src="data.js?v=20261103e"></script>
 <script src="products.js"></script>
 <script>
 (function(){
@@ -295,6 +295,7 @@
           </div>
           ${a.privacy ? `<a class="app-privacy" href="${a.privacy}">Privacy policy</a>` : ""}
         </div>
+        ${(a.screenshots || []).length ? `<div class="app-shots">${a.screenshots.map(s => `<img src="${s.src}" alt="${esc(s.alt)}" loading="lazy">`).join("")}</div>` : ""}
       </div>`).join("");
     $("#apps").hidden = false;
     $("#navApps").hidden = false;
