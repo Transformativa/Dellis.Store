@@ -202,11 +202,16 @@
       <span class="no">Book ${i + 1}</span>
       <h3>${esc(x.title)}</h3>
     </a>`).join("");
-  $("#solo").innerHTML = D.moreBooks.map(x => `
-    <a href="${x.link}" ${ext}>
-      <img src="${x.cover}" alt="Cover of ${esc(x.title)}" loading="lazy">
-      <div><small>${esc(x.collection)}${x.isNew ? ' <span class="newtag">NEW</span>' : ""}</small><h3>${esc(x.title)}</h3><p>${esc(x.blurb)}</p><div class="go">Buy on Amazon</div></div>
-    </a>`).join("");
+  $("#solo").innerHTML = D.collections.map(c => `
+    <div class="coll">
+      <div class="coll-head"><div><h3>${esc(c.name)}</h3>${c.tagline ? `<p>${esc(c.tagline)}</p>` : ""}</div>${c.link ? `<a class="btn btn-line btn-small arrow" href="${c.link}" ${ext}>See the series on Amazon</a>` : ""}</div>
+      <div class="coll-books">${c.books.map(x => `
+        <a href="${x.link}" ${ext}>
+          <img src="${x.cover}" alt="Cover of ${esc(x.title)}" loading="lazy">
+          <div><small>${esc(x.label)}${x.isNew ? ' <span class="newtag">NEW</span>' : ""}</small><h3>${esc(x.title)}</h3><p>${esc(x.blurb)}</p><div class="go">Buy on Amazon</div></div>
+        </a>`).join("")}
+      </div>
+    </div>`).join("");
 
   // shop
   const bigImg = u => u;

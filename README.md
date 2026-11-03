@@ -21,7 +21,7 @@ The brand site for Dellis and Danny the Mighty Diver, hosted free on GitHub Page
 Almost every update happens in `data.js`:
 
 - **Products update themselves.** Every night a GitHub job reads the Printify and Printful stores and refreshes `products.js` (new items, prices, removed items). To refresh right away: GitHub → **Actions** → *Sync products from Printify and Printful* → **Run workflow**. Product names on the site are the names in the stores, so rename them there. Items whose name ends in "copy" are skipped. If a store can't be read, the job stops and the site keeps its last list; GitHub emails you when that happens.
-- **Add a book:** add a line to `series.books` (keeps series order) or to `moreBooks`.
+- **Add a book:** add a line to `series.books` (keeps series order) or to a group in `collections` (each has a name, an optional tagline and series link, and its books in order).
 - **Add an album:** add its Spotify album ID (the part after `/album/`) to `albums`.
 - **Add a video:** add its YouTube ID (the part after `watch?v=`) to `videos`. The first video is the big featured one.
 

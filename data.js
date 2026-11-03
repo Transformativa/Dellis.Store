@@ -36,29 +36,42 @@ window.DELLIS = {
     ]
   },
 
-  // Books outside the main series
-  moreBooks: [
+  // Other collections, shown in this order under the main series
+  collections: [
     {
-      title: "The Courage to Try Something New",
-      collection: "Learning & Growing · Book 2",
-      blurb: "On a ski trip to Canada, Danny falls, gets nervous and keeps trying, and learns you don't have to be good at something the first time.",
-      cover: "images/courage-to-try-something-new.jpg",
-      link: "https://link.amazon/B0dKPa36g",
-      isNew: true
+      name: "Learning & Growing",
+      link: "https://link.amazon/B07dZlJYf",
+      tagline: "Helping little minds navigate big feelings, new experiences, and everyday challenges.",
+      books: [
+        {
+          title: "The Buzzy Body Mystery",
+          label: "Book 1",
+          blurb: "A calm ocean story that helps kids understand wiggly, buzzy feelings and find their way back to calm.",
+          cover: "https://m.media-amazon.com/images/I/51BPIetcyML._SY400_.jpg",
+          link: "https://link.amazon/B04jnhmFP"
+        },
+        {
+          title: "The Courage to Try Something New",
+          label: "Book 2",
+          blurb: "On a ski trip to Canada, Danny falls, gets nervous and keeps trying, and learns you don't have to be good at something the first time.",
+          cover: "images/courage-to-try-something-new.jpg",
+          link: "https://link.amazon/B0dKPa36g",
+          isNew: true
+        }
+      ]
     },
     {
-      title: "The Buzzy Body Mystery",
-      collection: "Inside My Body Collection",
-      blurb: "A calm ocean story that helps kids understand wiggly, buzzy feelings and find their way back to calm.",
-      cover: "https://m.media-amazon.com/images/I/51BPIetcyML._SY400_.jpg",
-      link: "https://link.amazon/B04jnhmFP"
-    },
-    {
-      title: "Forever My Puppy",
-      collection: "The Heart & Paws Collection",
-      blurb: "Whooffie the Maltese meets baby Danny and decides he is her puppy, for always.",
-      cover: "https://m.media-amazon.com/images/I/41EGv3myDYL._SY400_.jpg",
-      link: "https://link.amazon/B05JnHbCS"
+      name: "Heart & Paws",
+      tagline: "",
+      books: [
+        {
+          title: "Forever My Puppy",
+          label: "Book 1",
+          blurb: "Whooffie the Maltese meets baby Danny and decides he is her puppy, for always.",
+          cover: "https://m.media-amazon.com/images/I/41EGv3myDYL._SY400_.jpg",
+          link: "https://link.amazon/B05JnHbCS"
+        }
+      ]
     }
   ],
 
