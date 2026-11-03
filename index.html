@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Questrial&display=swap">
-<link rel="stylesheet" href="styles.css?v=20261103b">
+<link rel="stylesheet" href="styles.css?v=20261103c">
 </head>
 <body>
 
@@ -30,6 +30,7 @@
     <nav class="nav" aria-label="Main">
       <a href="#books">Books</a>
       <a href="#listen">Music</a>
+      <a href="#apps" id="navApps" hidden>Apps</a>
       <a href="#picks">Danny's Picks</a>
       <a href="#about">About</a>
       <a class="nav-shop" href="#shop">Shop</a>
@@ -118,6 +119,19 @@
     </div>
   </section>
 
+  <section id="apps" data-depth="25 m" data-name="Apps" hidden>
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <div class="eyebrow">Apps</div>
+          <h2>Learn and play with Danny</h2>
+          <p class="lede">Educational apps for kids from Dellis, available on iPhone, iPad and Android.</p>
+        </div>
+      </div>
+      <div class="apps" id="appGrid"></div>
+    </div>
+  </section>
+
   <section id="picks" data-depth="30 m" data-name="Picks">
     <div class="wrap">
       <div class="head">
@@ -175,7 +189,7 @@
   </div>
 </footer>
 
-<script src="data.js?v=20261103b"></script>
+<script src="data.js?v=20261103c"></script>
 <script src="products.js"></script>
 <script>
 (function(){
@@ -263,7 +277,27 @@
     .map(([n, u, ic]) => `<a href="${u}" ${ext} aria-label="${esc(n)}" title="${esc(n)}"><img src="${ic}" alt=""></a>`).join("");
 
   // depth gauge
-  const secs = [...document.querySelectorAll("section[data-depth]")];
+  // apps: the section and menu entry appear once an app has a store link
+  const liveApps = (D.apps || []).filter(a => a.appStore || a.googlePlay);
+  if (liveApps.length) {
+    $("#appGrid").innerHTML = liveApps.map(a => `
+      <div class="app">
+        ${a.icon ? `<img class="app-icon" src="${a.icon}" alt="${esc(a.name)} app icon" loading="lazy">` : `<div class="app-icon app-icon-blank" aria-hidden="true">${esc(a.name.charAt(0))}</div>`}
+        <div class="app-body">
+          <h3>${esc(a.name)}</h3>
+          <p>${esc(a.tagline)}</p>
+          <div class="stream">
+            ${a.appStore ? `<a class="btn btn-main btn-small arrow" href="${a.appStore}" ${ext}>App Store</a>` : ""}
+            ${a.googlePlay ? `<a class="btn btn-main btn-small arrow" href="${a.googlePlay}" ${ext}>Google Play</a>` : ""}
+          </div>
+          ${a.privacy ? `<a class="app-privacy" href="${a.privacy}">Privacy policy</a>` : ""}
+        </div>
+      </div>`).join("");
+    $("#apps").hidden = false;
+    $("#navApps").hidden = false;
+  }
+
+  const secs = [...document.querySelectorAll("section[data-depth]:not([hidden])")];
   $("#gauge").innerHTML = secs.map(s => `<li data-for="${s.id}"><a href="#${s.id}"><span class="d">${s.dataset.depth}</span>${s.dataset.name}</a></li>`).join("");
   const marks = [...document.querySelectorAll("#gauge li")];
   const io = new IntersectionObserver(es => es.forEach(en => {

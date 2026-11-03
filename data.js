@@ -137,6 +137,19 @@ window.DELLIS = {
     { id: "mft-7xb8FX4", title: "Mimi", length: "1:41" }
   ],
 
+  // Apps. The Apps section and menu entry stay hidden until an app has an
+  // App Store or Google Play link. Add more apps as new entries.
+  apps: [
+    {
+      name: "World Facts",
+      tagline: "An educational app for kids to explore countries, flags and facts from around the world.",
+      icon: "",          // e.g. "images/world-facts-icon.png"
+      appStore: "",      // App Store link, once approved
+      googlePlay: "",    // Google Play link, once approved
+      privacy: "world-facts/privacy/"
+    }
+  ],
+
   // Danny's Curated List (Amazon picks). Each list gets its own section on picks.html.
   picks: [
     { id: "books", title: "Danny's Favorite Books", image: "images/picks-books.jpg",
