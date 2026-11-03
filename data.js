@@ -145,7 +145,6 @@ window.DELLIS = {
       tagline: "Search any people, country, language or faith and discover fun facts, famous people and world records, all from trusted sources. Save your favorites to come back to.",
       icon: "images/world-facts-icon.png",
       screenshots: [
-        { src: "images/world-facts-home.jpg", alt: "World Facts home screen with the world fact of the day and search" },
         { src: "images/world-facts-search.jpg", alt: "Searching for Italians" },
         { src: "images/world-facts-country.jpg", alt: "Italy with its fun fact, something special and what the world knows" },
         { src: "images/world-facts-favorites.jpg", alt: "My Favorites with Italy saved" }
