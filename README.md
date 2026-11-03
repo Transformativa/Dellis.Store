@@ -35,6 +35,10 @@ Save the file on GitHub and the live site updates within a minute or two.
   - CNAME `www` → transformativa.github.io
 - Email (Admin@dellis.store): Zoho Mail. Leave the MX, SPF, DKIM, DMARC and Zoho verification records alone.
 
+## After editing data.js or styles.css
+
+Bump the `?v=` number on `data.js` and `styles.css` in `index.html` and `picks.html` (any new value works, such as today's date). That makes visitors' browsers fetch the new files instead of a cached copy.
+
 ## Curated List
 
 Edit the `picks` section of `data.js`. Each list has a title, a picture and its items; each item has a name, a short note and an Amazon link.

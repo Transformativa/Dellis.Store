@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Questrial&display=swap">
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles.css?v=20261103b">
 </head>
 <body>
 
@@ -175,7 +175,7 @@
   </div>
 </footer>
 
-<script src="data.js"></script>
+<script src="data.js?v=20261103b"></script>
 <script src="products.js"></script>
 <script>
 (function(){
@@ -202,7 +202,7 @@
       <span class="no">Book ${i + 1}</span>
       <h3>${esc(x.title)}</h3>
     </a>`).join("");
-  $("#solo").innerHTML = D.collections.map(c => `
+  $("#solo").innerHTML = (D.collections || []).map(c => `
     <div class="coll">
       <div class="coll-head"><div><h3>${esc(c.name)}</h3>${c.tagline ? `<p>${esc(c.tagline)}</p>` : ""}</div>${c.link ? `<a class="btn btn-line btn-small arrow" href="${c.link}" ${ext}>See the series on Amazon</a>` : ""}</div>
       <div class="coll-books">${c.books.map(x => `
