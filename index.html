@@ -205,7 +205,7 @@
   $("#solo").innerHTML = D.moreBooks.map(x => `
     <a href="${x.link}" ${ext}>
       <img src="${x.cover}" alt="Cover of ${esc(x.title)}" loading="lazy">
-      <div><small>${esc(x.collection)}</small><h3>${esc(x.title)}</h3><p>${esc(x.blurb)}</p><div class="go">Buy on Amazon</div></div>
+      <div><small>${esc(x.collection)}${x.isNew ? ' <span class="newtag">NEW</span>' : ""}</small><h3>${esc(x.title)}</h3><p>${esc(x.blurb)}</p><div class="go">Buy on Amazon</div></div>
     </a>`).join("");
 
   // shop

@@ -32,12 +32,20 @@ window.DELLIS = {
       { title: "Journey Through Winter Holidays", cover: "https://m.media-amazon.com/images/I/41ssLHV0esL._SY400_.jpg" },
       { title: "The Shipwreck of the Deep Atlantic", cover: "https://m.media-amazon.com/images/I/41zaomebXxL._SY400_.jpg" },
       { title: "Axolotl Rescue", cover: "https://m.media-amazon.com/images/I/51xpNhwGNyL._SY400_.jpg" },
-      { title: "The Wonders of India", cover: "https://m.media-amazon.com/images/I/51%2Bv5Uh8CsL._SY400_.jpg", isNew: true }
+      { title: "The Wonders of India", cover: "https://m.media-amazon.com/images/I/51%2Bv5Uh8CsL._SY400_.jpg" }
     ]
   },
 
   // Books outside the main series
   moreBooks: [
+    {
+      title: "The Courage to Try Something New",
+      collection: "Learning & Growing · Book 2",
+      blurb: "On a ski trip to Canada, Danny falls, gets nervous and keeps trying, and learns you don't have to be good at something the first time.",
+      cover: "images/courage-to-try-something-new.jpg",
+      link: "https://link.amazon/B0dKPa36g",
+      isNew: true
+    },
     {
       title: "The Buzzy Body Mystery",
       collection: "Inside My Body Collection",
