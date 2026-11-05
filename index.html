@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Questrial&display=swap">
-<link rel="stylesheet" href="styles.css?v=20261103f">
+<link rel="stylesheet" href="styles.css?v=20261105a">
 </head>
 <body>
 
@@ -125,7 +125,7 @@
         <div>
           <div class="eyebrow">Apps</div>
           <h2>Learn and play with Danny</h2>
-          <p class="lede">Educational apps for kids from Dellis, available on iPhone, iPad and Android.</p>
+          <p class="lede">Educational apps for kids from Dellis, for Android now and iPhone and iPad soon.</p>
         </div>
       </div>
       <div class="apps" id="appGrid"></div>
@@ -189,7 +189,7 @@
   </div>
 </footer>
 
-<script src="data.js?v=20261103f"></script>
+<script src="data.js?v=20261105a"></script>
 <script src="products.js"></script>
 <script>
 (function(){
@@ -292,6 +292,8 @@
             ${a.appStore ? `<a class="btn btn-main btn-small arrow" href="${a.appStore}" ${ext}>App Store</a>` : ""}
             ${a.googlePlay ? `<a class="btn btn-main btn-small arrow" href="${a.googlePlay}" ${ext}>Google Play</a>` : ""}
             ${!a.appStore && !a.googlePlay ? `<span class="btn btn-line btn-small" aria-disabled="true">Coming soon to the App Store and Google Play</span>` : ""}
+            ${a.googlePlay && !a.appStore ? `<span class="btn btn-line btn-small" aria-disabled="true">Coming soon to the App Store</span>` : ""}
+            ${a.appStore && !a.googlePlay ? `<span class="btn btn-line btn-small" aria-disabled="true">Coming soon to Google Play</span>` : ""}
           </div>
           ${a.privacy ? `<a class="app-privacy" href="${a.privacy}">Privacy policy</a>` : ""}
         </div>

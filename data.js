@@ -150,7 +150,7 @@ window.DELLIS = {
         { src: "images/world-facts-favorites.jpg", alt: "My Favorites with Italy saved" }
       ],
       appStore: "",      // App Store link, once approved
-      googlePlay: "",    // Google Play link, once approved
+      googlePlay: "https://play.google.com/store/apps/details?id=store.dellis.worldpeople",
       privacy: "world-facts/privacy/"
     }
   ],
